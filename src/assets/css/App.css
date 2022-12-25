@@ -1,0 +1,7 @@
+.rounded {
+    border-radius: 15px;
+}
+
+.cursor-initial {
+    cursor: initial !important;
+}

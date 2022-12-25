@@ -1,0 +1,120 @@
+.menu-edit-wrapper {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 50px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.catering-card {
+    filter: brightness(.98);
+    font-family: "Cairoli Now Extended Black", sans-serif;
+    border-radius: 15px !important;
+}
+
+.catering-card.disabled {
+    opacity: .5;
+}
+
+.catering-card .card-header {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    font-weight: 600;
+    font-size: 11px;
+    height: 40px;
+}
+
+.catering-card .dining-hall-dropdown {
+    background: none !important;
+    border: none !important;
+    height: 15px;
+}
+
+.catering-card .list-group-item {
+    font-weight: 600;
+    font-size: 13px;
+    color: #00111E;
+    height: 50px;
+    line-height: 15px;
+    display: flex;
+    vertical-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.catering-card .action-button {
+    user-select: none;
+    color: white;
+    line-height: 3;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: #2C4F00;
+    font-size: 9.1px;
+    font-weight: 600;
+    font-family: "Caros Heavy", sans-serif !important;
+    height: 32px !important;
+    padding: 0;
+}
+
+.action-button.past {
+    background-color: #06668d;
+}
+
+
+.catering-card .list-group-item .cal-info {
+    color: #BF3432;
+    font-weight: 600;
+}
+
+.catering-card .list-group-item .cal-info sup {
+    margin: 2px;
+    font-weight: initial;
+}
+
+.ui .menu {
+    border-radius: 12px !important;
+}
+
+.menu-item-dropdown .menu {
+    height: 200px;
+}
+
+.menu-item-cal-input {
+    width: 40px;
+    border: 2px solid #bebebe;
+    border-radius: 5px;
+}
+
+.catering-card-cell {
+    padding: 0 !important;
+    padding-top: 5.7% !important;
+    padding-left: 15px !important;
+}
+
+.catering-dropdown {
+    border-radius: 10px !important;
+    user-select: none;
+    margin-bottom: 10px;
+    width: 20%;
+    background-color: #41494B !important;
+}
+
+.catering-dropdown * {
+    border: none !important;
+    color: white !important;
+}
+
+.catering-dropdown .menu {
+    background-color: #41494B !important;
+    border-radius: 0 !important;
+    border-bottom-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0.5px !important;
+}
