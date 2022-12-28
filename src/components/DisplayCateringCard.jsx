@@ -15,13 +15,13 @@ function DisplayCateringCard({date, catering, menuItems, postUpdate}) {
     const updateCatering = (selectedMenuItems) => {
         if (selectedMenuItems.length !== 4 || selectedMenuItems.find(e => !e) !== undefined) {
             toast.warning("4 adet menü öğesi seçiniz")
-            return
+            return;
         }
         const model = {
             cateringId: catering.id,
             menuItemIds: selectedMenuItems
         }
-        cateringService.updateMenuItems(model).then(() => {
+        return cateringService.updateMenuItems(model).then(() => {
             postUpdate(catering.id, selectedMenuItems)
             setEditModeFlag(false)
         }).catch(handleCatch)

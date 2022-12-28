@@ -5,3 +5,8 @@
 .cursor-initial {
     cursor: initial !important;
 }
+
+.page-loader {
+    margin-top: 100px;
+    margin-bottom: 1vh;
+}

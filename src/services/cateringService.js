@@ -6,7 +6,7 @@ import {addDays, dateToDateString, getFirstWeekDayOfDate} from "../utilities/dat
 export default class CateringService {
 
     getCateringsDateBetween(lower = getFirstWeekDayOfDate(new Date()), upper = addDays(lower, 7), pageSize = 7 * 3) {
-        return axios.get(`http://localhost:8080/api/v1/catering/get/list/fully_joined/date_between?${urlParams({
+        return axios.get(`https://estufasting-restapi-production.up.railway.app/api/v1/catering/get/list/fully_joined/date_between?${urlParams({
             pageSize: pageSize,
             "sort.orders%5B0%5D.property": "date",
             lower: dateToDateString(lower),
@@ -15,7 +15,7 @@ export default class CateringService {
     }
 
     create(data) {
-        return axios.post("http://localhost:8080/api/v1/catering/create", data, {
+        return axios.post("https://estufasting-restapi-production.up.railway.app/api/v1/catering/create", data, {
             headers: {
                 "Accept-Language": "TR",
                 'Authorization': getToken()
@@ -24,7 +24,7 @@ export default class CateringService {
     }
 
     updateMenuItems(data) {
-        return axios.put("http://localhost:8080/api/v1/catering/update-menu-items", data, {
+        return axios.put("https://estufasting-restapi-production.up.railway.app/api/v1/catering/update-menu-items", data, {
             headers: {
                 "Accept-Language": "TR",
                 'Authorization': getToken()

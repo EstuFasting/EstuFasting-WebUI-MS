@@ -16,14 +16,14 @@ function DisabledCateringCard({date, mealId, menuItems, postCreate}) {
     const createCatering = (selectedMenuItems) => {
         if (selectedMenuItems.length !== 4 || selectedMenuItems.find(e => !e) !== undefined) {
             toast.warning("4 adet menü öğesi seçiniz")
-            return
+            return;
         }
         const model = {
             date: date,
             mealId: mealId,
             menuItemIds: selectedMenuItems
         }
-        cateringService.create(model).then(response => {
+        return cateringService.create(model).then(response => {
             postCreate(response.data.data)
             setEditModeFlag(false)
         }).catch(handleCatch)

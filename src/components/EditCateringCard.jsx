@@ -3,8 +3,9 @@ import {range} from "../utilities/utils";
 import {weekdayName} from "../utilities/dateUtils";
 import {Form, Icon, Table} from "semantic-ui-react";
 
-function EditCateringCard({date, action, menuItems, defaultMenuItems = [], exit}) {
+function EditCateringCard({date, action, menuItems = [], defaultMenuItems = [], exit}) {
 
+    const [loading, setLoading] = useState(false);
     const [selectedMenuItems, setSelectedMenuItems] = new useState(defaultMenuItems.map(e => e.id));
     const [calories, setCalories] = new useState([]);
     const [menuItemsOptions, setMenuItemsOptions] = new useState([]);
@@ -28,11 +29,14 @@ function EditCateringCard({date, action, menuItems, defaultMenuItems = [], exit}
 
     const caloriesByItemId = (id) => {
         if (!id) return "-"
-        return menuItems.find(item => item.id === id).calories
+        return menuItems.find(item => item.id === id)?.calories
     }
 
     const save = () => {
-        action(selectedMenuItems)
+        setLoading(true)
+        const  res = action(selectedMenuItems)
+        if (!res) setLoading(false)
+        else res.finally(() => setLoading(false))
     }
 
     return (
@@ -65,7 +69,7 @@ function EditCateringCard({date, action, menuItems, defaultMenuItems = [], exit}
                 </button>
                 <button className={`container-fluid m-0 h-100 border-0 action-button`}
                         style={{backgroundColor: "#FFB951", borderBottomLeftRadius: 0, width: "80%"}} onClick={save}>
-                    MENÜYÜ KAYDET
+                    {loading ? <Icon name="circle notch" loading size="large"/> : "MENÜYÜ KAYDET"}
                 </button>
             </div>
         </div>
